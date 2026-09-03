@@ -1,0 +1,248 @@
+---
+// The course's one diagram system: every week's figure is built from the same
+// four marks — a time axis, a record track, a capability track, and a
+// rupture point — so twelve weeks read as one course rather than twelve
+// unrelated illustrations. Nothing here is decorative; every mark stands for
+// something the surrounding prose argues.
+interface Segment {
+  /** Start and end, as a fraction (0-1) of the time axis. */
+  from: number;
+  to: number;
+  /** Drawn lower, for a capability deliberately narrowed rather than lost. */
+  lowered?: boolean;
+  /** Drawn thin and dashed, for a capability that is weak but not absent. */
+  faint?: boolean;
+  /** Drawn heavier, for a capability held or resumed at a visible cost. */
+  costly?: boolean;
+  /** Fades toward transparent at the segment's open end — an outcome not yet
+   *  settled, rather than a stop or a continuation. */
+  fadeEnd?: "from" | "to";
+}
+
+interface Rupture {
+  at: number;
+  kind?: "stop" | "resume" | "cost" | "uncertain" | "early";
+}
+
+interface Props {
+  /** Accessible name and caption; also what the figure is arguing in one line. */
+  title: string;
+  recordTrack?: "full" | "none" | "partial" | "emphatic";
+  recordPartial?: { from: number; to: number };
+  segments?: Segment[];
+  ruptures?: Rupture[];
+  /** Week 1 only: label the four primitives instead of arguing a case. */
+  legend?: boolean;
+}
+
+const {
+  title,
+  recordTrack = "full",
+  recordPartial,
+  segments = [],
+  ruptures = [],
+  legend = false,
+} = Astro.props as Props;
+
+const X0 = 28;
+const X1 = 372;
+const x = (t: number) => X0 + t * (X1 - X0);
+const AXIS_Y = 84;
+const RECORD_Y = 26;
+const CAP_Y = 52;
+const CAP_Y_LOW = 66;
+
+const legendItems = [
+  { label: "time axis", y: AXIS_Y },
+  { label: "record track", y: RECORD_Y },
+  { label: "capability track", y: CAP_Y },
+];
+---
+
+<figure class="week-diagram">
+  <svg viewBox="0 0 400 108" role="img" aria-labelledby="wd-title" xmlns="http://www.w3.org/2000/svg">
+    <title id="wd-title">{title}</title>
+
+    {
+      legend ? (
+        <>
+          <line x1={X0} y1={AXIS_Y} x2={X1} y2={AXIS_Y} class="wd-axis" />
+          {[0, 0.25, 0.5, 0.75, 1].map((t) => (
+            <line x1={x(t)} y1={AXIS_Y - 3} x2={x(t)} y2={AXIS_Y + 3} class="wd-tick" />
+          ))}
+          <line x1={X0} y1={RECORD_Y} x2={X1} y2={RECORD_Y} class="wd-record" />
+          <line x1={X0} y1={CAP_Y} x2={x(0.55)} y2={CAP_Y} class="wd-capability" />
+          <circle cx={x(0.55)} cy={CAP_Y} r={4} class="wd-rupture wd-rupture-stop" />
+          <line x1={x(0.7)} y1={CAP_Y} x2={X1} y2={CAP_Y} class="wd-capability" />
+          {legendItems.map((item) => (
+            <text x={X0} y={item.y - 8} class="wd-label">
+              {item.label}
+            </text>
+          ))}
+          <text x={x(0.55) + 8} y={CAP_Y - 10} class="wd-label">
+            rupture point
+          </text>
+        </>
+      ) : (
+        <>
+          <line x1={X0} y1={AXIS_Y} x2={X1} y2={AXIS_Y} class="wd-axis" />
+          {[0, 0.25, 0.5, 0.75, 1].map((t) => (
+            <line x1={x(t)} y1={AXIS_Y - 3} x2={x(t)} y2={AXIS_Y + 3} class="wd-tick" />
+          ))}
+
+          {recordTrack === "full" && (
+            <line x1={X0} y1={RECORD_Y} x2={X1} y2={RECORD_Y} class="wd-record" />
+          )}
+          {recordTrack === "emphatic" && (
+            <line x1={X0} y1={RECORD_Y} x2={X1} y2={RECORD_Y} class="wd-record wd-record-emphatic" />
+          )}
+          {recordTrack === "partial" && recordPartial && (
+            <line
+              x1={x(recordPartial.from)}
+              y1={RECORD_Y}
+              x2={x(recordPartial.to)}
+              y2={RECORD_Y}
+              class="wd-record wd-record-partial"
+            />
+          )}
+
+          {segments.map((seg) => {
+            const y = seg.lowered ? CAP_Y_LOW : CAP_Y;
+            const cls = [
+              "wd-capability",
+              seg.faint && "wd-capability-faint",
+              seg.costly && "wd-capability-costly",
+              seg.fadeEnd && `wd-capability-fade-${seg.fadeEnd}`,
+            ]
+              .filter(Boolean)
+              .join(" ");
+            const gradientId = seg.fadeEnd ? `fade-${seg.fadeEnd}-${Math.round(seg.from * 100)}` : undefined;
+            return (
+              <>
+                {gradientId && (
+                  <linearGradient id={gradientId} x1={x(seg.from)} x2={x(seg.to)} gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="currentColor" stop-opacity={seg.fadeEnd === "from" ? 0 : 1} />
+                    <stop offset="100%" stop-color="currentColor" stop-opacity={seg.fadeEnd === "to" ? 0 : 1} />
+                  </linearGradient>
+                )}
+                <line
+                  x1={x(seg.from)}
+                  y1={y}
+                  x2={x(seg.to)}
+                  y2={y}
+                  class={cls}
+                  stroke={gradientId ? `url(#${gradientId})` : undefined}
+                />
+              </>
+            );
+          })}
+
+          {ruptures.map((r) => (
+            <circle
+              cx={x(r.at)}
+              cy={CAP_Y}
+              r={r.kind === "cost" ? 5 : 4}
+              class={`wd-rupture wd-rupture-${r.kind ?? "stop"}`}
+            />
+          ))}
+        </>
+      )
+    }
+  </svg>
+  <figcaption>{title}</figcaption>
+</figure>
+
+<style>
+  .week-diagram {
+    margin: 1.5rem 0;
+    max-width: 26rem;
+  }
+
+  .week-diagram svg {
+    width: 100%;
+    height: auto;
+    color: var(--at-text-secondary, #555);
+  }
+
+  .wd-axis {
+    stroke: currentColor;
+    stroke-width: 1;
+    opacity: 0.6;
+  }
+
+  .wd-tick {
+    stroke: currentColor;
+    stroke-width: 1;
+    opacity: 0.4;
+  }
+
+  .wd-record {
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  .wd-record-emphatic {
+    stroke-width: 3.5;
+  }
+
+  .wd-record-partial {
+    stroke-dasharray: 5 4;
+  }
+
+  .wd-capability {
+    stroke: var(--at-accent, #a6321f);
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  .wd-capability-faint {
+    stroke-width: 1.5;
+    stroke-dasharray: 3 3;
+    opacity: 0.7;
+  }
+
+  .wd-capability-costly {
+    stroke-width: 5;
+  }
+
+  .wd-rupture {
+    fill: var(--at-accent, #a6321f);
+  }
+
+  .wd-rupture-resume {
+    fill: none;
+    stroke: var(--at-accent, #a6321f);
+    stroke-width: 2;
+  }
+
+  .wd-rupture-cost {
+    fill: var(--at-accent, #a6321f);
+    stroke: var(--at-accent, #a6321f);
+    stroke-width: 3;
+    fill-opacity: 0.5;
+  }
+
+  .wd-rupture-uncertain {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-dasharray: 2 2;
+  }
+
+  .wd-rupture-early {
+    fill: currentColor;
+    opacity: 0.6;
+  }
+
+  .wd-label {
+    font-size: 7px;
+    fill: currentColor;
+    opacity: 0.75;
+  }
+
+  figcaption {
+    font-size: 0.85rem;
+    color: var(--at-text-secondary, #555);
+    margin-top: 0.35rem;
+  }
+</style>
