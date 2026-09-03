@@ -1,0 +1,67 @@
+---
+// Kept as its own Astro component, rather than inline in the readings MDX
+// page, because MDX parses a `<style>` block's braces as JS expressions —
+// scoped CSS only works cleanly from a plain `.astro` file.
+---
+
+<dl class="readings-list">
+  <div id="polanyi-1958">
+    <dt>Polanyi, M. (1958). <cite>Personal Knowledge: Towards a Post-Critical Philosophy</cite>. University of Chicago Press.</dt>
+    <dd>The source of "tacit knowledge" itself. Every distinction the course draws between a capability and its record traces back to this book.</dd>
+  </div>
+
+  <div id="collins-1974">
+    <dt>Collins, H. M. (1974). "The TEA Set: Tacit Knowledge and Scientific Networks." <cite>Science Studies</cite>, 4(2), 165–185.</dt>
+    <dd>The laser nobody could build from the published papers alone. The paper this course cites most, because its argument is broader than its one case.</dd>
+  </div>
+
+  <div id="braverman-1974">
+    <dt>Braverman, H. (1974). <cite>Labor and Monopoly Capital: The Degradation of Work in the Twentieth Century</cite>. Monthly Review Press.</dt>
+    <dd>Deskilling as a management decision, argued at length, decades before "automation" was the word anyone used for it.</dd>
+  </div>
+
+  <div id="zuboff-1988">
+    <dt>Zuboff, S. (1988). <cite>In the Age of the Smart Machine: The Future of Work and Power</cite>. Basic Books.</dt>
+    <dd>The same technology that removes a capability from the people who held it can also demand a new one from them — argued from years inside the workplaces it changed.</dd>
+  </div>
+
+  <div id="bainbridge-1983">
+    <dt>Bainbridge, L. (1983). "Ironies of Automation." <cite>Automatica</cite>, 19(6), 775–779.</dt>
+    <dd>Six pages that explain why the most reliable automation produces the least practised operator — read by more disciplines than wrote it.</dd>
+  </div>
+
+  <div id="gao-2008-fogbank">
+    <dt>U.S. Government Accountability Office. (2008). <cite>Nuclear Weapons: NNSA Needs to Establish a Cost and Schedule Baseline for Modernizing Its Uranium Processing Capabilities</cite> (GAO-08-593).</dt>
+    <dd>The official record behind FOGBANK, at the level this course is allowed to discuss it: institutional and financial, not material.</dd>
+  </div>
+
+  <div id="nasm-f1-engine">
+    <dt>Smithsonian National Air and Space Museum. "F-1 Rocket Engine" (collection object A19700271000).</dt>
+    <dd>The museum hardware itself — the object later engineers examined when the drawings alone weren't enough.</dd>
+  </div>
+
+  <div id="military-times-2015-navy">
+    <dt>Military Times. (2015, November 1). "Naval Academy reinstates celestial navigation."</dt>
+    <dd>The invoice for reinstatement, itemised: how much training, starting with which class, and why now.</dd>
+  </div>
+</dl>
+
+<style>
+  .readings-list div {
+    margin-block-end: 1.5rem;
+  }
+
+  .readings-list dt {
+    font-weight: 600;
+    margin-block-end: 0.25rem;
+  }
+
+  .readings-list dd {
+    margin-inline-start: 0;
+    color: var(--at-text-secondary);
+  }
+
+  .readings-list cite {
+    font-style: italic;
+  }
+</style>

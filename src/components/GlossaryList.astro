@@ -1,0 +1,80 @@
+---
+// Kept as its own Astro component, rather than inline in the glossary MDX
+// page, because MDX parses a `<style>` block's braces as JS expressions —
+// scoped CSS only works cleanly from a plain `.astro` file.
+---
+
+<dl class="glossary-list">
+  <div id="tacit-knowledge">
+    <dt>Tacit knowledge</dt>
+    <dd>
+      What a practice requires that its documentation does not, and often
+      cannot, state — because the person who wrote the documentation didn't
+      need to state it to themselves. Polanyi's term; Collins' laser is the
+      course's clearest demonstration of it.
+    </dd>
+  </div>
+
+  <div id="capability">
+    <dt>Capability</dt>
+    <dd>
+      The ability to actually do a thing, as distinct from the record of how
+      it was once done. The course's central move is refusing to treat these
+      as the same fact.
+    </dd>
+  </div>
+
+  <div id="reinstatement">
+    <dt>Reinstatement</dt>
+    <dd>
+      Deliberately rebuilding a capability an institution let lapse. Rarely
+      free: reinstatement has a cost, and that cost is evidence the
+      capability was really gone.
+    </dd>
+  </div>
+
+  <div id="deskilling">
+    <dt>Deskilling</dt>
+    <dd>
+      The reduction of a worker's skill and judgement as an organisational
+      choice, usually made for efficiency or control — not, in Braverman's
+      argument, an accident of technology.
+    </dd>
+  </div>
+
+  <div id="automation-surprise">
+    <dt>Automation surprise</dt>
+    <dd>
+      The moment an automated system hands control back to a person who has
+      not had to exercise the underlying skill in years, at precisely the
+      moment that skill is needed most. Bainbridge's irony, named.
+    </dd>
+  </div>
+
+  <div id="institutional-memory">
+    <dt>Institutional memory</dt>
+    <dd>
+      What an organisation still knows how to do, carried by the people and
+      routines that do it — not by its filing system. The course's subject,
+      and the thing the site's own name mocks by pretending an institution
+      could simply teach a seminar about losing it.
+    </dd>
+  </div>
+</dl>
+
+<style>
+  .glossary-list div {
+    margin-block-end: 1.5rem;
+  }
+
+  .glossary-list dt {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-block-end: 0.25rem;
+  }
+
+  .glossary-list dd {
+    margin-inline-start: 0;
+    color: var(--at-text-secondary);
+  }
+</style>
