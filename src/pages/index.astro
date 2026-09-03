@@ -2,48 +2,60 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../assets/images/hero-home.avif";
+import heroImage from "../assets/images/hero-home.svg";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
+  heroImageAlt="A diagram in the course's own vocabulary: a record track running unbroken while a capability track stops, then resumes at a visible cost"
   {...siteConfig}
 >
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Twelve seminars, each built around one documented case of an institution
+    finding out it had lost something it thought it still had — from a
+    laser nobody could rebuild from the published papers, to a nuclear
+    material a production line could no longer remake from its own surviving
+    paperwork. For each case you'll apply a small, consistent method: pull
+    apart the record of a practice from the capability to actually perform
+    it, and locate exactly where, if anywhere, the two came apart. You'll
+    run that method on a case of your own for the case dossier, test it on
+    yourself with the reproduction attempt, and use it to argue a position
+    of your own in the seminar paper — including, if you choose, on the
+    live and unresolved case in week 11.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    Anyone who can read a documented historical or organisational case
+    closely and argue from it — no engineering, materials science, or
+    technical background is assumed, and week 4's case is deliberately kept
+    at the level of institutional history rather than technical detail. If
+    "we have the manual, so we still know how" is a sentence you've never
+    had reason to doubt, this course is aimed at you.
   </p>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
     <Card title={sessionLabels.plural} href="/sessions/">
-      <p>The weekly schedule and what happens in each teaching session.</p>
+      <p>The twelve weekly cases, in order, starting with the distinction the whole course rests on.</p>
     </Card>
     <Card title="Assessment" href="/assessments/">
-      <p>What is marked, what it is worth, and when it is due.</p>
+      <p>Three pieces of work, weighted 30/25/45, all built on the same method.</p>
     </Card>
     <Card title="People" href="/people/">
       <p>Who teaches the course and how to reach them.</p>
+    </Card>
+    <Card title="Glossary" href="/glossary/">
+      <p>Every term the course relies on, defined once and linked from every week that uses it.</p>
     </Card>
   </CardGrid>
 </ContentLayout>
