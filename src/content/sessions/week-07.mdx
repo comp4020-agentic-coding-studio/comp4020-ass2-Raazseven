@@ -1,0 +1,56 @@
+---
+title: Skill decay under automation
+description: >-
+  Bainbridge's ironies: the more reliable the automation, the more the
+  operator's skill decays, exactly where it is needed.
+week: 7
+date: 2027-04-05
+teachers:
+  - priya-osei-larbi
+---
+
+import WeekDiagram from "../../components/WeekDiagram.astro";
+
+## The case, or the argument
+
+Lisanne Bainbridge's 1983 paper names a trap that week 6's deliberate
+version doesn't cover: nobody has to choose deskilling for it to happen.
+Automate a task well enough, and the person nominally supervising it stops
+practising the underlying skill simply because the automation rarely needs
+them to use it. That would be a fair trade if the automation never failed.
+Bainbridge's irony is that reliability is exactly what erodes the operator's
+skill, and failure is exactly when that skill gets called on — meaning the
+automation is least trustworthy at covering for its own rare failures,
+because the human backup has had the least practice at precisely that
+moment.
+
+This is [automation surprise](/glossary/#automation-surprise) at its
+source: not a system doing something unexpected, but a person, asked to
+take back over, discovering their own hands don't remember what they used
+to.
+
+## What we do in the seminar
+
+List three automated systems you rely on (navigation, spell-check,
+autopilot-adjacent tools, anything). For each, name the underlying skill it
+has quietly reduced your practice of, and estimate honestly how you'd do
+without it tomorrow.
+
+## One reading
+
+[Bainbridge (1983)](/readings/#bainbridge-1983) — six pages, read closely;
+almost every later citation of "ironies of automation" is citing this paper
+specifically.
+
+## A question left open
+
+Week 6 makes deskilling deliberate; this week makes it a side effect of
+reliability nobody intended. If the outcome looks the same from outside an
+organisation, does the distinction matter to anyone but the people who
+caused it?
+
+<WeekDiagram
+  title="A capability that tapers under reliable automation rather than stopping"
+  recordTrack="full"
+  segments={[{ from: 0, to: 0.5 }, { from: 0.5, to: 1, faint: true }]}
+/>

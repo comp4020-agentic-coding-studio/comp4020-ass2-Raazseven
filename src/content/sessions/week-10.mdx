@@ -1,0 +1,59 @@
+---
+title: Detection
+description:
+  Every case so far was diagnosed in retrospect. What would evidence of a
+  loss in progress look like?
+week: 10
+date: 2027-04-26
+teachers:
+  - priya-osei-larbi
+---
+
+import WeekDiagram from "../../components/WeekDiagram.astro";
+
+## The case, or the argument
+
+Look back across weeks 2 through 9: FOGBANK, the F-1, deskilling,
+automation surprise, contested craft losses — every one was noticed after
+the fact, when the capability was needed and turned out not to be there
+(or, in week 9's case, argued about after the fact with no live capability
+to test at all). None of this course's cases is a story about an
+institution that caught the gap while there was still time to act on it
+cheaply.
+
+This week turns the method around: instead of diagnosing a loss that
+already happened, what would an [automation surprise](/glossary/#automation-surprise)
+or a FOGBANK-style gap look like while it was still forming, rather than
+after it had already cost years and a rebuilding budget? The honest answer
+is that this is harder than diagnosis, precisely because the diagnostic
+tools this course has built so far — the record track, the capability
+track — are read from documents that describe a state, not from a live
+signal that a gap is opening.
+
+## What we do in the seminar
+
+For each of weeks 4, 5, 7 and 8, identify the earliest point at which
+someone inside the institution plausibly could have noticed the gap
+forming, using only information available at that time. Mark it on the
+week's diagram as an early rupture point and compare it to where the
+institution actually noticed.
+
+## One reading
+
+[Bainbridge (1983)](/readings/#bainbridge-1983) — reread for its practical
+suggestions about maintaining operator skill under automation; several are,
+in effect, early-detection measures rather than after-the-fact fixes.
+
+## A question left open
+
+If detection is harder than diagnosis, is it because the evidence genuinely
+isn't there before the capability is needed, or because nobody is looking
+for it — and which of those two is true of your own organisation, if you
+have one?
+
+<WeekDiagram
+  title="An earlier point where the loss could have been noticed, marked against where it actually was"
+  recordTrack="full"
+  segments={[{ from: 0, to: 0.6 }]}
+  ruptures={[{ at: 0.3, kind: "early" }, { at: 0.6, kind: "stop" }]}
+/>

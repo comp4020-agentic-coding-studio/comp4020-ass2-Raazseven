@@ -1,0 +1,65 @@
+---
+title: Seminar
+description: Student cases, and revision.
+week: 12
+date: 2027-05-10
+teachers:
+  - priya-osei-larbi
+  - yusuf-adeyemi
+---
+
+import WeekDiagram from "../../components/WeekDiagram.astro";
+
+## The case, or the argument
+
+There is no new case this week. Instead, the seminar runs on cases the
+class brings: each student presents one situation, found outside this
+syllabus, read through the framework built in weeks 1–11 — a claimed
+capability, a record track, a capability track, and, if there is one, a
+rupture point. The point of the exercise is not to find an eleventh
+dramatic example as good as FOGBANK or the F-1. It's to find out whether
+the framework still does useful work on a case nobody chose for how well it
+would illustrate the argument.
+
+Revisit the guesses from week 1 — "documentation problem" or "capability
+problem," made before any case had been read. If the framework earned its
+keep, those guesses should be easier to make now, and wrong in more
+interesting ways than they were in week 1.
+
+## What we do in the seminar
+
+Each student presents one outside case in five minutes: the claim, the
+record track, the capability track, and a one-line diagram sketched on the
+board using this course's own vocabulary. The class asks one question each:
+where does this case press on a distinction the syllabus drew too cleanly?
+
+## One reading
+
+[Polanyi (1958)](/readings/#polanyi-1958) — return to the source text one
+last time. Read the opening chapter again, not the laser case; most
+students find it says something different the second time.
+
+## A question left open
+
+[Institutional memory](/glossary/#institutional-memory) is the thing this
+course is nominally about, taught by an institution, in a seminar, using
+slides that will themselves eventually be old records of a practice. If
+this course stopped running for a decade and then restarted from these
+files alone, what would the person restarting it be missing that these
+pages don't say?
+
+<WeekDiagram
+  title="Eleven weeks of cases, summarised in one figure"
+  recordTrack="full"
+  segments={[
+    { from: 0, to: 0.2 },
+    { from: 0.3, to: 0.5, costly: true },
+    { from: 0.6, to: 0.8, faint: true },
+    { from: 0.85, to: 1, fadeEnd: "to" },
+  ]}
+  ruptures={[
+    { at: 0.2, kind: "stop" },
+    { at: 0.3, kind: "resume" },
+    { at: 0.6, kind: "uncertain" },
+  ]}
+/>
