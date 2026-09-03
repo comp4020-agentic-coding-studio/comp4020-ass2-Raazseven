@@ -38,3 +38,29 @@ Keep growing it: a convention to hold the agent to, a sensor that keeps
 catching you out, a fact about this stack the agent gets wrong. The gap
 between the two sections above and what's here by the deadline is part of
 what this assignment's process criterion reads.
+
+## Facts about this stack, learned the hard way
+
+- A content page needs `.mdx`, not `.md`, the moment it embeds a component
+  with object/array props (e.g. `<WeekDiagram segments={[...]} />`). Plain
+  `.md` in this project's collections doesn't run the JSX transform, even
+  though the collection loader globs both extensions — it fails silently at
+  build time, not at write time.
+- Never put an inline `<style>` block directly in an `.mdx` file. MDX parses
+  a `<style>` element's children as JS expressions via acorn, not as raw CSS,
+  so any literal `{`/`}` in the rules breaks the build with an opaque acorn
+  parse error. Put styled markup in a plain `.astro` component and import it
+  instead — scoped `<style>` only compiles safely there.
+- An unquoted multi-line YAML frontmatter scalar (e.g. `description:`) that
+  contains a literal `: ` (colon-space) mid-sentence gets misparsed as a
+  nested mapping ("implicit mapping pair; a colon is missed"). Use the folded
+  block scalar indicator (`description: >-`) for any description text with
+  that pattern, rather than quoting or rewording around it.
+- `astro-theme-university`'s `Hero` references an SVG `heroImage` as an
+  external `<img>` asset — it never gets inlined, so CSS custom properties
+  (`var(--at-accent)`, etc.) don't cascade into it. Any hand-authored hero SVG
+  needs literal hex values from the theme palette, not `var(...)`. The social
+  card path is the opposite: `OpenGraph` always rasterizes to JPEG via
+  `getImage()`, so the card source needs to already be a raster file (or
+  `image.dangerouslyProcessSVG` set, which isn't here) — `sharp` is already a
+  dependency and works fine for a one-off rasterization script.
