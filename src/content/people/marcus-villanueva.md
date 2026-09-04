@@ -8,6 +8,10 @@ affiliation: School of Institutional Memory, Slop University
 role: tutor
 email: m.villanueva@slop.university
 contact: Ask in the seminar, or email with the week number in the subject line.
+photo: ./marcus-villanueva.avif
+photoAlt:
+  A stylised portrait of a person facing the viewer, short side-parted hair,
+  flat sand and black shapes on warm cream, in a two-ink risograph print.
 published: true
 ---
 

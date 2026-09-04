@@ -11,6 +11,10 @@ contact:
   Email for anything about the course as a whole. Bring week-by-week questions
   to the seminar instead — they're usually more useful answered in front of
   the class.
+photo: ./priya-osei-larbi.avif
+photoAlt:
+  A stylised portrait of a person facing the viewer, round glasses, flat gold
+  and black shapes on warm cream, in a two-ink risograph print.
 published: true
 ---
 

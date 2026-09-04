@@ -7,6 +7,10 @@ affiliation: School of Institutional Memory, Slop University
 role: tutor
 email: y.adeyemi@slop.university
 contact: Ask in the seminar, or email with the week number in the subject line.
+photo: ./yusuf-adeyemi.avif
+photoAlt:
+  A stylised portrait of a person facing the viewer, short beard, flat warm
+  grey and black shapes on warm cream, in a two-ink risograph print.
 published: true
 ---
 
