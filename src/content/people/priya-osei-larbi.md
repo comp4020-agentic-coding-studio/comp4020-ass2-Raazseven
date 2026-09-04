@@ -5,7 +5,7 @@ description:
   institutional forgetting via a PhD on shipyards that had stopped building
   the ships they still had drawings for.
 affiliation: School of Institutional Memory, Slop University
-role: Convenor
+role: convenor
 email: p.osei-larbi@slop.university
 contact:
   Email for anything about the course as a whole. Bring week-by-week questions
