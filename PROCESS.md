@@ -127,9 +127,26 @@ The five people photos started as flat risograph-style illustrations, one
 per person. Once other pages had more genuine texture to them, that
 made those five look inconsistent by comparison, so they were replaced
 with AI-generated portrait photos (StyleGAN2, via a public generator, one
-distinct face per person) — cropped with `sharp` to the same 400×400 frame
-the illustrations used, and with each `photoAlt` rewritten to describe an
+distinct face per person), with each `photoAlt` rewritten to describe an
 actual photograph rather than the two-ink print style it replaced.
+
+The first crop — a tight 400×400 square, following the illustrations'
+own frame — broke on the person page's hero: `astro-theme-university`'s
+`Hero` stretches its image full-bleed at up to 100vw against a `min-height`
+of only `20rem`, an aspect ratio far wider than a face-filling square, and
+`object-fit: cover` on that shape sampled only a thin band through the
+middle of the frame — the eyes, on every one of the five. A same-size
+source also meant the responsive widths Astro tried to request for that
+banner (up to 2560px) were all larger than the source itself, so the
+browser was upscaling a 400px image across the full page width. The fix
+addresses both: each face is now composited onto a 2400×800 canvas — a
+wide letterboxed frame with generous flat padding either side rather than
+a tighter crop, since `object-fit: cover`'s visible band size in source
+pixels is set by the *target*'s aspect ratio, not by how the source itself
+is padded vertically, so only widening the canvas (not just padding it
+taller) keeps the whole face inside whatever band a given crop samples.
+2400px also gives the hero real width options to pick from instead of
+upscaling a single small source.
 
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
