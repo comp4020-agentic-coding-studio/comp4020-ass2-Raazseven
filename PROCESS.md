@@ -86,13 +86,27 @@ runs, not just its talking points. A second shared visual,
 proportional runsheet bar, the same pairing `WeekDiagram` already gives the
 course's argument. Each deck still reuses that week's own `WeekDiagram`
 props rather than restating them, so the deck and the session page can't
-quietly drift apart, and the last slide of every deck links back to that
-week's session page — `astromotion`'s deck pages carry no site chrome of
-their own, so that link is the only way back to the rest of the course
-short of the browser's own back button. `spec/session-slides.test.ts`
-checks that every session's `slides` link resolves to a deck that actually
-built, the same discipline the lecture/deck check already used, and needed
-no changes when the decks themselves were rebuilt.
+quietly drift apart. `spec/session-slides.test.ts` checks that every
+session's `slides` link resolves to a deck that actually built, the same
+discipline the lecture/deck check already used, and needed no changes when
+the decks themselves were rebuilt.
+
+Getting back out of a deck started as a plain link on the last slide, but
+that read as an easy-to-miss "button" rather than real navigation, so it
+was replaced with a persistent back-to-session button and an Esc-key
+shortcut
+[`0ad1b85`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/0ad1b85).
+`astromotion`'s deck pages carry no site chrome of their own — the route
+and layout are injected from the package, not ours to edit — so
+`DeckBackNav.astro` renders nothing itself and instead runs a script that
+attaches a fixed button to `document.body`, which survives Reveal
+navigating between slides regardless of which slide the script was
+declared on. Esc claims the key in the capture phase before Reveal's own
+(bubble-phase) overview toggle sees it, the same technique astromotion's
+own whiteboard module already uses against Reveal. Neither needs a
+per-deck session slug: a deck's URL and its session page share the same
+last path segment, so the target is derived from `location.pathname` at
+runtime.
 
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
