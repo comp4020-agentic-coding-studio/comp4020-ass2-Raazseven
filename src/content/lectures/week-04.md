@@ -16,6 +16,7 @@ published: true
 This course runs as seminars, not lectures — the "lectures" collection
 exists here only to carry this one deck, expanded into a full institutional
 walk-through of the FOGBANK case for the course's vertical slice. Every
-other week's seminar links a shorter deck directly from its own page: a
-claim, this course's one diagram, and a discussion prompt, not a lecture in
-slide form.
+other week's seminar links its own deck directly from its own page, built
+to the same runsheet this one follows: framing, the course's one diagram,
+discussion, the week's group activity, a debrief, and a wrap-up — a full
+seminar script, not a lecture in slide form.

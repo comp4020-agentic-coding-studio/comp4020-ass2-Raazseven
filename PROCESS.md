@@ -71,16 +71,28 @@ session and that at least one lecture's `slides` field points at a deck that
 actually built, so the vertical slice claim is enforced, not just asserted in
 this file.
 
-Once all twelve seminars existed, I went back and gave each one a short
-discussion-support deck of its own
+Once all twelve seminars existed, I went back and gave each one a deck of
+its own
 [`818ee02`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/818ee02) —
 a `slides` field on the sessions schema, mirroring the one `lectures`
-already had, so week 4's vertical-slice deck stayed the one exception rather
-than the template for a duplicate schema field. Each deck reuses that
-week's own `WeekDiagram` props rather than restating them, so the deck and
-the session page can't quietly drift apart; `spec/session-slides.test.ts`
+already had. The first pass at those decks was a single claim slide, the
+diagram, and a discussion prompt; once built and reviewed, that read as too
+thin to actually run a seminar from, so it was rebuilt into a fixed runsheet
+every week now follows: framing drawn out past a single paragraph, the
+diagram, guided discussion, that week's group activity expanded into timed
+steps, a debrief, and a wrap-up — roughly the two hours a seminar actually
+runs, not just its talking points. A second shared visual,
+`SeminarAgenda.astro`, gives every deck's opening slide the same
+proportional runsheet bar, the same pairing `WeekDiagram` already gives the
+course's argument. Each deck still reuses that week's own `WeekDiagram`
+props rather than restating them, so the deck and the session page can't
+quietly drift apart, and the last slide of every deck links back to that
+week's session page — `astromotion`'s deck pages carry no site chrome of
+their own, so that link is the only way back to the rest of the course
+short of the browser's own back button. `spec/session-slides.test.ts`
 checks that every session's `slides` link resolves to a deck that actually
-built, the same discipline the lecture/deck check already used.
+built, the same discipline the lecture/deck check already used, and needed
+no changes when the decks themselves were rebuilt.
 
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)

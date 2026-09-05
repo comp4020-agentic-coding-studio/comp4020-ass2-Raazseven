@@ -64,3 +64,9 @@ what this assignment's process criterion reads.
   `getImage()`, so the card source needs to already be a raster file (or
   `image.dangerouslyProcessSVG` set, which isn't here) — `sharp` is already a
   dependency and works fine for a one-off rasterization script.
+- In a `.deck.mdx` file, a multi-line `{/* ... */}` JSX comment breaks the
+  build: the formatter escapes the `*` inside it and the broken output is a
+  fixed point (`astromotion`'s own check catches it, not a stock MDX error).
+  Single-line comments and directives (`{/* _class: hero */}`) are fine —
+  keep facilitation notes on one line, or use a fenced ` ```comment ` block
+  instead.
