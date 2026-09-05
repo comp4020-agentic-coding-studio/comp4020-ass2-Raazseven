@@ -1,12 +1,5 @@
 # Process overview
 
-How I got from the brief to the harness and agentic workflow behind this
-submission. Markers follow this file's citations rather than trawling the
-repo for evidence I didn't point at. This file is the shape; the course
-site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement.
-
 ## Where this came from
 
 I started by gathering real material rather than inventing a theme first, and
@@ -34,50 +27,58 @@ cost" (week 5, the F-1 week itself).
 
 ## How I got here
 
-I built one seminar's worth of content, lecture, and a real Reveal.js deck
-first, to prove the plumbing before writing the other eleven blind — week 4,
-under the brief's tightest constraint on weapons detail
+My first instruction was the vertical slice: one seminar's worth of content,
+a lecture entry, and a real Reveal.js deck, to prove the plumbing before the
+other eleven got written blind. I chose week 4 (FOGBANK) for that slice
+deliberately, since it's also under the brief's tightest constraint on
+weapons detail
 [`6f4773f`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/6f4773f),
-with the shared diagram component coming out of that same slice
+and had the shared diagram component come out of that same slice
 [`eeca766`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/eeca766).
-The rest followed against that fixed shape
+I then had the rest written against that fixed shape
 [`2d5ef7f`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/2d5ef7f),
-[`6bbac85`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/6bbac85),
-catching two build-only errors — a YAML colon misread as a nested mapping,
-and MDX reading a `<style>` block's braces as JavaScript
-[`cd8ac7b`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/cd8ac7b).
-Week 11's live case is written as case and counter-case with no verdict,
-checked by re-reading it against the brief rather than by any test.
+[`6bbac85`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/6bbac85) —
+catching two build-only errors, a YAML colon misread as a nested mapping and
+MDX reading a `<style>` block's braces as JavaScript
+[`cd8ac7b`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/cd8ac7b) —
+and directed week 11's live case to be written as case and counter-case with
+no verdict, which I checked myself by re-reading it against the brief rather
+than trusting any test.
 
-The three assessments are weighted 30/25/45
-[`e4a7dfe`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/e4a7dfe),
-summed from the built site's own data rather than typed by hand
+I set the three assessments' weights at 30/25/45
+[`e4a7dfe`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/e4a7dfe)
+and had that total summed from the built site's own data rather than typed
+by hand
 [`e31e44b`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/e31e44b),
-the same discipline `CLAUDE.md` holds me to for dates. Each week then got a
-deck of its own
+the same discipline `CLAUDE.md` holds the agent to for dates. Once all
+twelve weeks existed, I had each one given a deck of its own
 [`818ee02`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/818ee02):
-a first pass of one claim slide and a prompt was too thin to run a seminar
-from, so it became a full runsheet with a shared `SeminarAgenda` visual, and
-later a `WeekStats` panel for a sense of scale.
+the first pass, one claim slide and a prompt, read as too thin to run a
+seminar from once I looked at it, so I had it rebuilt into a full runsheet
+with a shared `SeminarAgenda` visual, and later a `WeekStats` panel for a
+sense of scale.
 
 The five people started as flat illustrations; once the rest of the site had
-real texture, they became AI-generated photos instead, which took three
-passes to land — eyes-only crop, then a visibly cut-and-pasted one, then a
-clipped chin from an assumed hero ratio that turned out wrong once I measured
-the real render with a headless browser instead of guessing it. Search
-looked unimplemented in review but wasn't: the theme already wires it end to
-end, and only reports the index missing under `pnpm dev`, since it indexes
-`dist/`, which doesn't exist until a build runs.
+real texture I had them swapped for AI-generated photos instead
+[`e456d07`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/e456d07),
+which took three rounds of me flagging what was still wrong before it
+landed. The first fix widened an eyes-only crop into a letterboxed frame
+[`49deff9`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/49deff9);
+when the flat padding that used still looked cut-and-pasted to me, I had it
+replaced with a blurred backdrop of the same photo instead
+[`10a49e5`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/10a49e5).
+The chin was still getting clipped after that, from a hero aspect ratio the
+agent had assumed rather than measured, so I had it check the actual render
+with a headless browser instead of guessing again
+[`532d8ba`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/532d8ba),
+and had that measure-don't-guess lesson written into `CLAUDE.md` itself
+[`15b75da`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/15b75da).
 
-The policies page
+Search looked unimplemented in review, but I had that checked rather than
+taken on faith: the theme already wires it end to end, and only reports the
+index missing under `pnpm dev`, since it indexes `dist/`, which doesn't
+exist until a build runs. The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
 and the home page and hero art
 [`3a3d5ad`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/3a3d5ad)
 came last, reusing the diagram system's own vocabulary at large scale.
-
-## Before you ship
-
-`pnpm check:evidence` checks that citations resolve to real commits, a crit
-week's reflection is in `reflections/`, and `CLAUDE.md` is there — that the
-account is traceable, not that it's good; that's the marker's call. Images
-aren't checked: a broken one is visible the moment this renders on GitHub.
