@@ -1,0 +1,49 @@
+---
+title: Detection
+description: Week 10 discussion slides, diagnosis after the fact versus detection in progress.
+---
+
+import WeekDiagram from "../components/WeekDiagram.astro";
+
+# Detection
+
+## diagnosis after the fact, or detection in progress
+
+{/* _class: impact */}
+
+---
+
+## the claim
+
+Every case so far in this course was noticed after the fact — the
+capability was needed and turned out not to be there. This week turns the
+method around: what would evidence of a loss in progress look like while it
+was still forming, rather than after it had already cost years and a
+rebuilding budget?
+
+```notes
+Be honest that this is harder than diagnosis: the record track and
+capability track are read from documents that describe a state, not from a
+live signal. Say that before the diagram.
+```
+
+---
+
+<WeekDiagram
+  title="An earlier point where the loss could have been noticed, marked against where it actually was"
+  recordTrack="full"
+  segments={[{ from: 0, to: 0.6 }]}
+  ruptures={[
+    { at: 0.3, kind: "early" },
+    { at: 0.6, kind: "stop" },
+  ]}
+/>
+
+---
+
+## the question this week leaves for the seminar
+
+Is detection harder than diagnosis because the evidence genuinely isn't
+there yet, or because nobody is looking for it?
+
+{/* _class: centered */}

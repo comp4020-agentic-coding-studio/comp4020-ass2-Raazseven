@@ -1,0 +1,53 @@
+---
+title: Buying it back
+description: Week 8 discussion slides, the invoice for reinstatement.
+---
+
+import WeekDiagram from "../components/WeekDiagram.astro";
+
+# Buying it back
+
+## the invoice for reinstatement
+
+{/* _class: impact */}
+
+---
+
+## the claim
+
+In 2015 the US Naval Academy reinstated instruction in celestial
+navigation, dropped decades earlier once satellite positioning made it seem
+unnecessary. Public reporting is unusually explicit about both why it came
+back and what it cost — new instruction hours, a specific class year, and
+instructors who had to relearn a skill the institution had spent decades
+treating as obsolete.
+
+```notes
+Most of this course documents a loss. This is the one case with numbers
+attached to buying the capability back — worth pausing on before the
+diagram.
+```
+
+---
+
+<WeekDiagram
+  title="A capability that stops, then resumes at a visible cost"
+  recordTrack="full"
+  segments={[
+    { from: 0, to: 0.4 },
+    { from: 0.75, to: 1, costly: true },
+  ]}
+  ruptures={[
+    { at: 0.4, kind: "stop" },
+    { at: 0.75, kind: "resume" },
+  ]}
+/>
+
+---
+
+## the question this week leaves for the seminar
+
+Is the Naval Academy case rare because hedging is hard, or because most
+institutions never notice the gap while there's still time?
+
+{/* _class: centered */}

@@ -1,0 +1,51 @@
+---
+title: The F-1 engine
+description: Week 5 discussion slides, reverse-engineered from the object.
+---
+
+import WeekDiagram from "../components/WeekDiagram.astro";
+
+# The F-1 engine
+
+## reverse-engineering from the object, not the paperwork
+
+{/* _class: impact */}
+
+---
+
+## the claim
+
+NASA held the original F-1 drawings decades after production ended and
+still could not straightforwardly rebuild the engine from them. Engineers
+went back to physical hardware — recovered flight-hardware injector plates,
+museum-held engines — and reverse-engineered tolerances, weld sequences, and
+manufacturing judgement calls the drawings alone never settled.
+
+```notes
+Read this against week 4 before the diagram: two institutions, two
+different missing pieces, the same shape of gap.
+```
+
+---
+
+<WeekDiagram
+  title="A capability that stops, then resumes from an artefact, at cost"
+  recordTrack="full"
+  segments={[
+    { from: 0, to: 0.3 },
+    { from: 0.75, to: 1, costly: true },
+  ]}
+  ruptures={[
+    { at: 0.3, kind: "stop" },
+    { at: 0.75, kind: "resume" },
+  ]}
+/>
+
+---
+
+## the question this week leaves for the seminar
+
+Is reverse-engineering from an artefact recovering the same capability that
+was lost, or a different one that produces the same output?
+
+{/* _class: centered */}
