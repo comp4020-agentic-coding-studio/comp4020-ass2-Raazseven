@@ -139,14 +139,48 @@ middle of the frame — the eyes, on every one of the five. A same-size
 source also meant the responsive widths Astro tried to request for that
 banner (up to 2560px) were all larger than the source itself, so the
 browser was upscaling a 400px image across the full page width. The fix
-addresses both: each face is now composited onto a 2400×800 canvas — a
-wide letterboxed frame with generous flat padding either side rather than
-a tighter crop, since `object-fit: cover`'s visible band size in source
+addresses both: each face is composited onto a wide canvas rather than a
+tighter crop, since `object-fit: cover`'s visible band size in source
 pixels is set by the *target*'s aspect ratio, not by how the source itself
 is padded vertically, so only widening the canvas (not just padding it
 taller) keeps the whole face inside whatever band a given crop samples.
-2400px also gives the hero real width options to pick from instead of
-upscaling a single small source.
+
+That first widened canvas (2400×800, flat cream side padding) fixed the
+eyes-only crop but introduced two more rounds of feedback once looked at
+directly rather than simulated. Flat-colour padding read as an obvious
+cut-and-paste seam on the hero, fixed by replacing it with a heavily
+blurred, cover-fit copy of the same photo as the backdrop instead — same
+canvas, sharp face tile composited on top, no seam between real photo
+texture and solid colour. Then, measuring the hero with an actual browser
+rather than an assumed target size (`getBoundingClientRect` on
+`.at-hero-image`, not a guessed aspect ratio) showed it renders wider than
+either guess — 4:1 at a common 1440px desktop width, and wider still on
+larger monitors, since the hero's height is pinned near its `min-height`
+floor while its width tracks the viewport. Against that, the 2400×800
+canvas (3:1) was itself narrow enough to still crop into the chin. The
+canvas is now 4000×800 (5:1) with the face tile held to 700 of those 800px
+(a real 50px margin top and bottom, not a pixel-exact fit to the
+calculated minimum), which pushes the crop past width-constrained for
+every realistic desktop width — at 5:1 or narrower, `cover` crops the
+blurred side padding, never the face, and even an ultrawide 1920px-viewport
+case (measured at 5.33:1) only trims a small uncropped margin rather than
+the face itself. Confirmed against real rendered pages (headless Chromium,
+not just the crop-math simulation used for the earlier two rounds) at
+1440px and 1920px viewports before this landed.
+
+Search looked unimplemented in review — the nav's search box always answered
+"Search index not available." — but turned out not to be, once checked rather
+than assumed. `astro-theme-university` already wires Pagefind end to end
+(`Nav`'s search trigger, `SearchDialog`'s query/render logic), and the theme's
+own build hook already indexes the site after `astro build` — the "Search
+index built." line was already in the build log before I changed anything.
+The dialog only reports the index as unavailable under `pnpm dev`, because
+Pagefind indexes the compiled HTML in `dist/`, which doesn't exist until a
+build runs; that's inherent to a static search index, not a defect. I
+confirmed the built index is real rather than trusting the log line, by
+building, serving `dist/` with `pnpm preview`, and querying Pagefind's own
+`pagefind.js` for a term known to appear on the site. No commit accompanies
+this paragraph: nothing needed to change, so there is nothing to cite.
 
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
