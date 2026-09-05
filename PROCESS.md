@@ -123,6 +123,14 @@ following the same `role="img"`-on-the-inner-element pattern `SeminarAgenda`
 already established rather than the `aria-allowed-role` mistake the runsheet
 redesign made and fixed the round before.
 
+The five people photos started as flat risograph-style illustrations, one
+per person. Once other pages had more genuine texture to them, that
+made those five look inconsistent by comparison, so they were replaced
+with AI-generated portrait photos (StyleGAN2, via a public generator, one
+distinct face per person) — cropped with `sharp` to the same 400×400 frame
+the illustrations used, and with each `photoAlt` rewritten to describe an
+actual photograph rather than the two-ink print style it replaced.
+
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
 and the home page and hero/card art

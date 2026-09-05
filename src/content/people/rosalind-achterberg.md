@@ -11,8 +11,8 @@ contact:
   policies page. Teaching questions go to whoever is down to teach that week.
 photo: ./rosalind-achterberg.avif
 photoAlt:
-  A stylised portrait of a person facing the viewer, hair in a bun, flat
-  bronze and black shapes on warm cream, in a two-ink risograph print.
+  A photographic portrait of a woman with shoulder-length brown hair and a
+  fringe, smiling and facing the viewer against a plain olive background.
 published: true
 ---
 

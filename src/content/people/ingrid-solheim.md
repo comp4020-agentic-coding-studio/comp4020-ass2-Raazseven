@@ -10,9 +10,8 @@ email: i.solheim@slop.university
 contact: Ask in the seminar, or email with the week number in the subject line.
 photo: ./ingrid-solheim.avif
 photoAlt:
-  A stylised portrait of a person facing the viewer, long straight hair with
-  a gold headband, flat charcoal and black shapes on warm cream, in a
-  two-ink risograph print.
+  A photographic portrait of a woman with long straight brown hair, facing
+  the viewer against a plain cream background.
 published: true
 ---
 

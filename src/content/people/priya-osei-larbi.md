@@ -13,8 +13,8 @@ contact:
   the class.
 photo: ./priya-osei-larbi.avif
 photoAlt:
-  A stylised portrait of a person facing the viewer, round glasses, flat gold
-  and black shapes on warm cream, in a two-ink risograph print.
+  A photographic portrait of a woman with short dark curly hair, a neutral
+  expression, facing the viewer against a plain grey background.
 published: true
 ---
 

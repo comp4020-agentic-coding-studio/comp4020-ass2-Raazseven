@@ -10,8 +10,8 @@ email: m.villanueva@slop.university
 contact: Ask in the seminar, or email with the week number in the subject line.
 photo: ./marcus-villanueva.avif
 photoAlt:
-  A stylised portrait of a person facing the viewer, short side-parted hair,
-  flat sand and black shapes on warm cream, in a two-ink risograph print.
+  A photographic portrait of a man with short side-parted brown hair,
+  smiling and facing the viewer against a plain tan background.
 published: true
 ---
 
