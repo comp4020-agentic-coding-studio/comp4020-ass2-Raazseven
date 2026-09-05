@@ -70,3 +70,12 @@ what this assignment's process criterion reads.
   Single-line comments and directives (`{/* _class: hero */}`) are fine —
   keep facilitation notes on one line, or use a fenced ` ```comment ` block
   instead.
+- `astro-theme-university`'s `Hero` has a `min-height`, not a fixed height,
+  so its rendered aspect ratio scales with viewport width — measured 4:1 at
+  1440px, 5.33:1 at 1920px, not whatever looked like a reasonable guess.
+  Any image built to survive `object-fit: cover` on it needs that ratio
+  *measured* (`getBoundingClientRect()` on `.at-hero-image`, ideally via a
+  real headless browser), not assumed: a crop-math simulation against a
+  guessed target still looks correct while quietly clipping the real page,
+  and it took three rounds of "the photo's cropped" reports before the
+  guess got checked instead of re-guessed.
