@@ -108,6 +108,21 @@ per-deck session slug: a deck's URL and its session page share the same
 last path segment, so the target is derived from `location.pathname` at
 runtime.
 
+A third shared visual, `WeekStats.astro`, followed once the runsheet was in
+place: `WeekDiagram` argues a case's shape and `SeminarAgenda` shows the
+room's two hours, but neither gives a sense of scale — how long, how much,
+how contested. Since the project has no charting dependency and most weeks
+have no hard numbers to plot (five of twelve do), the component is a small
+stat-tile grid rather than a chart: real figures where a week has them
+(FOGBANK's "years, tens of millions of dollars"; the Naval Academy's 2015
+reinstatement), and a categorical resolution label in the course's own
+vocabulary (resumed-at-cost, partial-degraded, contested-unverifiable, and so
+on) where it doesn't, so all twelve panels stay the same shape. Each deck
+gets one new slide for it, directly after that week's `WeekDiagram` slide,
+following the same `role="img"`-on-the-inner-element pattern `SeminarAgenda`
+already established rather than the `aria-allowed-role` mistake the runsheet
+redesign made and fixed the round before.
+
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
 and the home page and hero/card art
