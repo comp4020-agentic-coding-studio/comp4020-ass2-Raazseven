@@ -4,6 +4,7 @@ description: Week 2's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -77,6 +78,19 @@ reason that sentence is coherent instead of confusing.
   title="A capability with no record track beside it"
   recordTrack="none"
   segments={[{ from: 0, to: 1 }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="The TEA laser, by the numbers"
+  stats={[
+    { value: "0", label: "rupture points in this week's diagram — \"nothing here ever broke\"" },
+    { value: "early 1960s", label: "when several labs tried to build a TEA laser from the papers alone" },
+    { value: "never-on-record", label: "resolution: a capability that was never on the record to begin with" },
+  ]}
 />
 
 {/* _class: centered */}

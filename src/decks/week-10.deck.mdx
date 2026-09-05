@@ -4,6 +4,7 @@ description: Week 10's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -77,6 +78,19 @@ predicting one.
   recordTrack="full"
   segments={[{ from: 0, to: 0.6 }]}
   ruptures={[{ at: 0.3, kind: "early" }, { at: 0.6, kind: "stop" }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="Detection, by the numbers"
+  stats={[
+    { value: "4", label: "cases re-examined for an early rupture point — weeks 4, 5, 7, and 8" },
+    { value: "0", label: "cases in this course caught the gap while there was still time to act cheaply" },
+    { value: "meta-method", label: "resolution: detection is harder than diagnosis" },
+  ]}
 />
 
 {/* _class: centered */}

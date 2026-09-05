@@ -4,6 +4,7 @@ description: Week 12's full seminar runsheet — no new case; the class presents
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -78,6 +79,19 @@ back out now — this slide is exactly the callback that activity set up.
     { at: 0.2, kind: "stop" },
     { at: 0.3, kind: "resume" },
     { at: 0.6, kind: "uncertain" },
+  ]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="Eleven weeks, by the numbers"
+  stats={[
+    { value: "5 min", label: "per student to present an outside case — claim, record track, capability track" },
+    { value: "11", label: "weeks of cases the class's week-1 guesses get tested against, one more time" },
+    { value: "meta-review", label: "resolution: no new case — the class brings its own" },
   ]}
 />
 

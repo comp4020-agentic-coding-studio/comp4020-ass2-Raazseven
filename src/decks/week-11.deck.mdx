@@ -6,6 +6,7 @@ description: >-
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -87,6 +88,19 @@ its hand toward either side, and the room will notice if it does.
   segments={[
     { from: 0.5, to: 1, fadeEnd: "to" },
     { from: 0.5, to: 1, fadeEnd: "to", lowered: true },
+  ]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="The live case, by the numbers"
+  stats={[
+    { value: "2", label: "readings of the same live case — a loss in progress, or a new capability being built" },
+    { value: "0", label: "verdicts this page supplies — \"the course does not have one to give\"" },
+    { value: "unresolved-contested", label: "resolution: live and still open" },
   ]}
 />
 

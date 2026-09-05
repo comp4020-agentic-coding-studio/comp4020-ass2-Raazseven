@@ -4,6 +4,7 @@ description: Week 6's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -77,6 +78,19 @@ the job? Most people default to the first without noticing.
   title="A capability deliberately narrowed rather than lost outright"
   recordTrack="full"
   segments={[{ from: 0, to: 0.4 }, { from: 0.4, to: 1, lowered: true }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="Loss by design, by the numbers"
+  stats={[
+    { value: "3", label: "reasons Braverman gives for narrowing a job on purpose — cheaper to staff, easier to supervise, harder to bargain with" },
+    { value: "2", label: "chairs the same event can be described from — \"lost\" and \"given away\"" },
+    { value: "narrowed-by-design", label: "resolution: deliberately narrowed rather than lost outright" },
+  ]}
 />
 
 {/* _class: centered */}

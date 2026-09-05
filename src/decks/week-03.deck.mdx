@@ -4,6 +4,7 @@ description: Week 3's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -75,6 +76,19 @@ in something they've worked on — it's a fast way into the discussion.
   title="A full record beside a capability that is present but weak"
   recordTrack="emphatic"
   segments={[{ from: 0, to: 1, faint: true }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="A manual that passes every audit"
+  stats={[
+    { value: "complete", label: "record: every step present, every sign-off recorded" },
+    { value: "archive ≠ org", label: "\"we have full records\" vs. \"we can currently do this\" — two different claims" },
+    { value: "partial-degraded", label: "resolution: a full record beside a capability that is present but weak" },
+  ]}
 />
 
 {/* _class: centered */}

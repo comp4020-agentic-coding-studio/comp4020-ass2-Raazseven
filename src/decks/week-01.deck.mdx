@@ -4,6 +4,7 @@ description: Week 1's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -91,6 +92,19 @@ week's figure reuses exactly these marks, so it's worth the room having
 this one memorised. Point at the axis, then the record track, then the
 capability track, then the rupture point, in that order, every time.
 ```
+
+---
+
+<WeekStats
+  title="A method tested eleven times"
+  stats={[
+    { value: "11", label: "cases the method gets tested against, weeks 2–12" },
+    { value: "2", label: "readings of \"we know how we did it\" — the file, or the doing" },
+    { value: "meta-framing", label: "resolution: no case of its own — sets up the distinction the other eleven weeks test" },
+  ]}
+/>
+
+{/* _class: centered */}
 
 ---
 

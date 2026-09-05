@@ -4,6 +4,7 @@ description: Week 9's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -78,6 +79,19 @@ room notices the diagram is doing something different this week.
   recordPartial={{ from: 0, to: 0.4 }}
   segments={[{ from: 0, to: 1, faint: true }]}
   ruptures={[{ at: 0.5, kind: "uncertain" }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="Two contested claims"
+  stats={[
+    { value: "2", label: "famous loss claims tested here — Damascus steel, Stradivari's varnish" },
+    { value: "contested", label: "by historians and materials scientists who argue the originals can be matched by other means" },
+    { value: "contested-unverifiable", label: "resolution: a compelling story is not evidence" },
+  ]}
 />
 
 {/* _class: centered */}

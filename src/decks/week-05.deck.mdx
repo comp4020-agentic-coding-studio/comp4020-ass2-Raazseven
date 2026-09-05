@@ -4,6 +4,7 @@ description: Week 5's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -83,6 +84,19 @@ Point out the gap between the two marked ruptures — that's the years
 where the capability was simply gone, before reconstruction from the
 artefact began.
 ```
+
+---
+
+<WeekStats
+  title="The F-1, by the numbers"
+  stats={[
+    { value: "decades", label: "after Saturn V production ended, before NASA needed to rebuild the F-1" },
+    { value: "2", label: "institutions, two different missing pieces — FOGBANK's material, the F-1's manufacturing judgement" },
+    { value: "resumed-at-cost", label: "resolution: reconstructed from an artefact, not the drawings" },
+  ]}
+/>
+
+{/* _class: centered */}
 
 ---
 

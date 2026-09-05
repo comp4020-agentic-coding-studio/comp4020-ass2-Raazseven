@@ -4,6 +4,7 @@ description: Week 4's full seminar runsheet — the course's vertical slice, in 
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -88,6 +89,19 @@ Point at the record track continuing unbroken across the whole axis
 first, then at the capability track stopping partway. That gap between
 the two lines is the entire week.
 ```
+
+---
+
+<WeekStats
+  title="FOGBANK, by the numbers"
+  stats={[
+    { value: "years", label: "to reinstate production once the material was needed again" },
+    { value: "tens of millions ($)", label: "rebuilding cost, tracked in oversight reporting" },
+    { value: "2008", label: "GAO report this week is built from" },
+  ]}
+/>
+
+{/* _class: centered */}
 
 ---
 

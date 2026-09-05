@@ -4,6 +4,7 @@ description: Week 8's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -75,6 +76,19 @@ of intent.
   recordTrack="full"
   segments={[{ from: 0, to: 0.4 }, { from: 0.75, to: 1, costly: true }]}
   ruptures={[{ at: 0.4, kind: "stop" }, { at: 0.75, kind: "resume" }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="Buying it back, by the numbers"
+  stats={[
+    { value: "2015", label: "the US Naval Academy reinstated celestial navigation instruction" },
+    { value: "decades", label: "after it was dropped from the core curriculum" },
+    { value: "resumed-at-cost", label: "resolution: itemised — new instruction hours, a class year, instructors relearning the skill" },
+  ]}
 />
 
 {/* _class: centered */}

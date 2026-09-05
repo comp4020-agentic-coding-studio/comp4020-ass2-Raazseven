@@ -4,6 +4,7 @@ description: Week 7's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import WeekStats from "../components/WeekStats.astro";
 import SeminarAgenda from "../components/SeminarAgenda.astro";
 import DeckBackNav from "../components/DeckBackNav.astro";
 
@@ -76,6 +77,19 @@ week is built to explain.
   title="A capability that tapers under reliable automation rather than stopping"
   recordTrack="full"
   segments={[{ from: 0, to: 0.5 }, { from: 0.5, to: 1, faint: true }]}
+/>
+
+{/* _class: centered */}
+
+---
+
+<WeekStats
+  title="Bainbridge's irony, by the numbers"
+  stats={[
+    { value: "1983", label: "Bainbridge's paper naming the trap automation creates" },
+    { value: "6 pages", label: "long — nearly every later citation of \"ironies of automation\" is citing it" },
+    { value: "tapered-not-stopped", label: "resolution: reliability erodes the skill; nobody chose it" },
+  ]}
 />
 
 {/* _class: centered */}
