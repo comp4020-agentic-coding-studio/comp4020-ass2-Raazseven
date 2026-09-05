@@ -1,30 +1,67 @@
 ---
 title: Records without capability
-description: Week 3 discussion slides, complete records and absent capability.
+description: Week 3's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import SeminarAgenda from "../components/SeminarAgenda.astro";
 
 # Records without capability
 
-## complete records, absent capability
+## a manual that passes every audit and still doesn't work
 
 {/* _class: impact */}
 
 ---
 
-## the claim
+## today's seminar
 
-A procedure manual can pass every audit — every step present, every
-sign-off recorded — and still fail the moment someone who has never done the
-thing tries to follow it cold. Completeness is a property of documents, not
-of practices, and "we have full records" is a claim about the archive, not
-about what the organisation can currently do.
+<SeminarAgenda
+  segments={[
+    { label: "Framing", minutes: 20 },
+    { label: "The pattern", minutes: 10 },
+    { label: "Discussion", minutes: 20 },
+    { label: "Activity: find the missing sentence", minutes: 40 },
+    { label: "Debrief", minutes: 20 },
+    { label: "Wrap-up", minutes: 10 },
+  ]}
+/>
+
+---
+
+## the opposite failure
+
+Week 2 was an absent record. This week is the opposite: a complete one
+that still doesn't transfer the [capability](/glossary/#capability) it
+describes.
 
 ```notes
-The two claims get confused constantly, usually by whoever is relying on
-the records rather than whoever wrote them. Worth naming that pair out
-loud before the diagram.
+Say the opposite framing explicitly — the room will otherwise try to
+reduce this week to "week 2 again," and the whole point is that it isn't.
+```
+
+---
+
+## what the manual actually describes
+
+A procedure manual can pass every audit — every step present, every
+sign-off recorded — and still fail the moment someone who has never done
+the thing tries to follow it cold. The manual describes what a competent
+practitioner does. It was never written to teach the competence itself.
+
+---
+
+## two different claims
+
+- "We have full records" — a claim about the **archive**
+- "We can currently do this" — a claim about the **organisation**
+
+These get confused constantly, usually by the people relying on the
+records rather than the people who wrote them.
+
+```notes
+Ask who in the room has seen these two claims get swapped for each other
+in something they've worked on — it's a fast way into the discussion.
 ```
 
 ---
@@ -37,10 +74,61 @@ loud before the diagram.
 
 ---
 
-## the question this week leaves for the seminar
+## discussion
 
-If a record can be complete and still insufficient, what would a record
-that closed the gap even look like — and is "more detail" the right axis to
-add it on?
+- What's the difference between "the manual is complete" and "the manual
+  works"?
+- Recall an audit you've seen pass. Did it check the archive, or the
+  practice?
+- Think of instructions you followed that turned out to need something
+  unstated.
+- If a record can be complete and still insufficient, what would a record
+  that closed the gap even look like — is "more detail" the right axis to
+  add it on, or the wrong one?
+  {/* facilitate: this is the question left open — let it stand unresolved into the wrap-up */}
+
+---
+
+## activity: find the missing sentence
+
+**Setup (5 min).** Recall a set of instructions you've followed that
+turned out to need something the instructions didn't say — a recipe, an
+assembly guide, an onboarding doc.
+
+**Groups (20 min).** In groups of three, each person walks the group
+through their example. Together, identify the exact sentence where the
+gap was, and classify what kind of thing was missing: a judgement call, a
+piece of context, a physical skill, a corrective for when it goes
+slightly wrong.
+
+**Share-back (15 min).** Tally the categories on the board across all
+groups.
+
+```notes
+Push groups to name the *exact sentence*, not the general area — vague
+answers here ("the instructions weren't detailed enough") are the
+"more detail" trap the wrap-up is about to name.
+```
+
+---
+
+## debrief
+
+Which category dominated the board's tally — judgement calls, context,
+physical skill, or corrective handling? Compare that against week 2's
+categories from writing unwritable instructions. Same shape of gap, or a
+different one?
+
+---
+
+## wrap-up
+
+Completeness is a property of documents, not of practices — a full record
+doesn't guarantee the capability behind it, and "more detail" isn't
+automatically the fix. Week 4 gives you the sharpest version of this
+pattern at institutional scale: a full record, a capability that stopped
+anyway.
+
+[Back to this week's session page](/sessions/week-03/)
 
 {/* _class: centered */}

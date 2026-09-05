@@ -1,7 +1,10 @@
 ---
 title: FOGBANK, institutional history
-description: The week 4 vertical slice, in slide form.
+description: Week 4's full seminar runsheet — the course's vertical slice, in slide form.
 ---
+
+import WeekDiagram from "../components/WeekDiagram.astro";
+import SeminarAgenda from "../components/SeminarAgenda.astro";
 
 # FOGBANK
 
@@ -11,14 +14,25 @@ description: The week 4 vertical slice, in slide form.
 
 ---
 
-## the claim
+## today's seminar
 
-A production line stopped. The paperwork survived. The material could not
-be reliably remade from it.
+<SeminarAgenda
+  segments={[
+    { label: "Framing", minutes: 20 },
+    { label: "The pattern", minutes: 10 },
+    { label: "Discussion", minutes: 20 },
+    { label: "Activity: audit the timeline", minutes: 40 },
+    { label: "Debrief", minutes: 20 },
+    { label: "Wrap-up", minutes: 10 },
+  ]}
+/>
 
 ```notes
-Say the claim once, plainly, before any timeline. It's the whole slide deck
-in one sentence, and everything after this just supports it.
+This is the course's vertical slice — the one week worked end to end at
+the depth every other week only gestures at. Say the scope limit on the
+next slide out loud before anything else, and hold to it in discussion:
+students will ask about the material itself, and the honest answer is
+that this deck doesn't go there and won't.
 ```
 
 ---
@@ -33,6 +47,18 @@ Institutional and documentary history only: timeline, staffing, cost.
 
 ---
 
+## the claim
+
+A production line stopped. The paperwork survived. The material could not
+be reliably remade from it.
+
+```notes
+Say the claim once, plainly, before any timeline. It's the whole seminar
+in one sentence, and everything after this just supports it.
+```
+
+---
+
 ## the shape of the timeline
 
 - production runs, for years, without incident
@@ -43,32 +69,77 @@ Institutional and documentary history only: timeline, staffing, cost.
 
 ---
 
-## what the government's own reporting says
-
-The U.S. Government Accountability Office's 2008 report on nuclear weapons
-material stewardship is the primary source this deck stays inside. It
-documents cost and schedule, not chemistry.
+<WeekDiagram
+  title="A record track that continues intact while the capability track stops"
+  recordTrack="full"
+  segments={[{ from: 0, to: 0.6 }]}
+  ruptures={[{ at: 0.6, kind: "stop" }]}
+/>
 
 ```notes
-Point students at the reading before this slide, not after — GAO-08-593 is
-the anchor citation for this entire week, and it's worth having open during
-the seminar discussion, not just before it.
+Point at the record track continuing unbroken across the whole axis
+first, then at the capability track stopping partway. That gap between
+the two lines is the entire week.
 ```
 
 ---
 
-## the cost of reinstatement
+## discussion
 
-Public reporting describes a reinstatement effort measured in years and in
-tens of millions of dollars — the closest thing this course has to an
-invoice for a capability that had to be rebuilt rather than simply looked
-up.
+- Read against weeks 2 and 3 — is this a missing-paperwork case, or
+  something else?
+- Public reporting says some part of what the original production
+  depended on was never captured in the documentation. What kind of thing
+  does that leave uncaptured, in institutional terms — a person, a
+  habit, a judgement made on the line?
+- Why does institutional and financial oversight reporting count as
+  evidence here, when technical description isn't something this deck is
+  allowed to use?
+- Week 8 has a case where a lapsed capability was reinstated. What made
+  reinstatement possible there, and does anything in this week's case
+  suggest why this one took years and tens of millions of dollars rather
+  than months?
+  {/* facilitate: hold this one for the wrap-up — it's the question this week leaves open */}
 
 ---
 
-## the question this week leaves for the seminar
+## activity: audit the timeline
 
-At which point on this timeline could an outside auditor, reading only the
-records available at that time, have flagged the risk?
+**Setup (5 min).** As a class, walk back through the framing and diagram
+slides once more, aloud, slide by slide.
+
+**Groups (20 min).** In small groups, mark the earliest point on the
+timeline where an outside auditor, reading only the records available at
+that time, could plausibly have flagged the risk that reinstatement would
+be this hard.
+
+**Share-back (15 min).** Compare each group's marked point, then check it
+against what the government's own reporting says actually happened.
+
+```notes
+[U.S. GAO (2008)](/readings/#gao-2008-fogbank) is the anchor citation for
+this whole week — have it open during share-back, not just before the
+seminar.
+```
+
+---
+
+## debrief
+
+How far ahead of the actual need did the earliest plausible audit point
+sit, across the room's answers? What kind of signal would an auditor have
+needed to see — a staffing gap, a retirement, a production lapse with no
+resumption plan — none of it technical, all of it institutional?
+
+---
+
+## wrap-up
+
+A record track that survives; a capability track that stops anyway. Week
+5 gives you a different missing piece behind the same shape of gap. Week
+8 gives you a case where reinstatement worked, to read back against this
+one's cost.
+
+[Back to this week's session page](/sessions/week-04/)
 
 {/* _class: centered */}

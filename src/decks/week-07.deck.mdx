@@ -1,28 +1,68 @@
 ---
 title: Skill decay under automation
-description: Week 7 discussion slides, automation's irony.
+description: Week 7's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import SeminarAgenda from "../components/SeminarAgenda.astro";
 
 # Skill decay under automation
 
-## automation's irony
+## the more reliable the automation, the less practised the human backup
 
 {/* _class: impact */}
 
 ---
 
-## the claim
+## today's seminar
 
-Lisanne Bainbridge's 1983 paper: automate a task well enough, and the
-person nominally supervising it stops practising the underlying skill,
-because the automation rarely needs them to use it. Reliability is exactly
-what erodes the skill that failure will call on.
+<SeminarAgenda
+  segments={[
+    { label: "Framing", minutes: 20 },
+    { label: "The pattern", minutes: 10 },
+    { label: "Discussion", minutes: 20 },
+    { label: "Activity: audit your own automation", minutes: 40 },
+    { label: "Debrief", minutes: 20 },
+    { label: "Wrap-up", minutes: 10 },
+  ]}
+/>
+
+---
+
+## nobody has to choose this
+
+Lisanne Bainbridge's 1983 paper names a trap that week 6's deliberate
+version doesn't cover: nobody has to choose deskilling for it to happen.
 
 ```notes
-Nobody has to choose this the way week 6's deskilling was chosen — that's
-the contrast worth drawing before the diagram.
+Contrast directly with last week — no beneficiary to point at here, no
+chair to sit in and defend the choice. That's what makes this one harder
+to argue with.
+```
+
+---
+
+## the irony
+
+Automate a task well enough, and the person nominally supervising it
+stops practising the underlying skill simply because the automation
+rarely needs them to use it. That would be a fair trade if the automation
+never failed. Bainbridge's irony is that reliability is exactly what
+erodes the operator's skill, and failure is exactly when that skill gets
+called on.
+
+---
+
+## automation surprise
+
+This is [automation surprise](/glossary/#automation-surprise) at its
+source: not a system doing something unexpected, but a person, asked to
+take back over, discovering their own hands don't remember what they used
+to.
+
+```notes
+Let this land before moving to the diagram — it's the sentence the whole
+week is built to explain.
 ```
 
 ---
@@ -30,18 +70,61 @@ the contrast worth drawing before the diagram.
 <WeekDiagram
   title="A capability that tapers under reliable automation rather than stopping"
   recordTrack="full"
-  segments={[
-    { from: 0, to: 0.5 },
-    { from: 0.5, to: 1, faint: true },
-  ]}
+  segments={[{ from: 0, to: 0.5 }, { from: 0.5, to: 1, faint: true }]}
 />
 
 ---
 
-## the question this week leaves for the seminar
+## discussion
 
-If the outcome looks the same from outside, does it matter whether
-deskilling was deliberate (week 6) or a side effect of reliability nobody
-intended (this week)?
+- Name a piece of automation you trust because it rarely fails. Has that
+  reliability reduced your own practice of the underlying skill?
+- Why is *reliability specifically* the thing that erodes the skill,
+  rather than automation in general?
+- Week 6 makes deskilling deliberate; this week makes it a side effect
+  nobody intended. If the outcome looks the same from outside an
+  organisation, does the distinction matter to anyone but the people who
+  caused it?
+  {/* facilitate: this is the question left open — hold it for the wrap-up */}
+
+---
+
+## activity: audit your own automation
+
+**Setup (5 min).** Individually, list three automated systems you rely on
+— navigation, spell-check, autopilot-adjacent tools, anything.
+
+**Pairs (20 min).** Trade lists. For each system, name the underlying
+skill it has quietly reduced your partner's practice of, and have them
+estimate honestly how they'd do without it tomorrow — push back on
+answers that sound too optimistic.
+
+**Share-back (15 min).** Each pair shares their most surprising "I'd do
+worse than I thought" moment.
+
+```notes
+The self-assessment is the exercise's weak point on purpose — Bainbridge's
+argument predicts people underestimate their own decay, so the partner's
+job is to be the outside check.
+```
+
+---
+
+## debrief
+
+Look across the room's estimates. Was the erosion visible to the person
+experiencing it before this exercise, or only visible from outside — the
+way Bainbridge's argument would predict?
+
+---
+
+## wrap-up
+
+Reliability, not neglect, is what erodes the skill here — and the person
+losing it is usually the last to notice. Week 8 gives you a case where a
+lapsed capability was bought back deliberately, with the cost written
+down in public.
+
+[Back to this week's session page](/sessions/week-07/)
 
 {/* _class: centered */}

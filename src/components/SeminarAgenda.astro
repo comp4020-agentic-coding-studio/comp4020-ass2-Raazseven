@@ -1,0 +1,88 @@
+---
+// A second shared visual, alongside WeekDiagram: not the course's argument,
+// but the shape of the two hours in the room. Every week uses the same six
+// segments in the same order and (mostly) the same minutes, so the runsheet
+// itself becomes something students recognise week to week, the same way
+// WeekDiagram's marks do.
+interface Segment {
+  label: string;
+  minutes: number;
+}
+
+interface Props {
+  segments: Segment[];
+}
+
+const { segments } = Astro.props as Props;
+const total = segments.reduce((sum, s) => sum + s.minutes, 0);
+const summary = segments.map((s) => `${s.label}, ${s.minutes} minutes`).join("; ");
+---
+
+<figure class="seminar-agenda">
+  <div class="sa-bar" role="img" aria-label={`Seminar runsheet: ${summary}`}>
+    {
+      segments.map((seg) => (
+        <div class="sa-segment" style={`flex-grow: ${seg.minutes};`}>
+          <span class="sa-label">{seg.label}</span>
+          <span class="sa-minutes">{seg.minutes} min</span>
+        </div>
+      ))
+    }
+  </div>
+  <figcaption>~{total} minutes, start to finish</figcaption>
+</figure>
+
+<style>
+  .seminar-agenda {
+    margin: 1.5rem 0;
+  }
+
+  .sa-bar {
+    display: flex;
+    width: 100%;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    border: 1px solid var(--at-text-secondary, #555);
+  }
+
+  .sa-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.6rem 0.35rem;
+    text-align: center;
+    border-right: 1px solid var(--at-text-secondary, #555);
+  }
+
+  .sa-segment:last-child {
+    border-right: none;
+  }
+
+  .sa-segment:nth-child(odd) {
+    background: color-mix(in srgb, var(--at-accent, #a6321f) 32%, transparent);
+  }
+
+  .sa-segment:nth-child(even) {
+    background: color-mix(in srgb, var(--at-accent, #a6321f) 18%, transparent);
+  }
+
+  .sa-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  .sa-minutes {
+    font-size: 0.68rem;
+    opacity: 0.75;
+  }
+
+  figcaption {
+    font-size: 0.85rem;
+    color: var(--at-text-secondary, #555);
+    margin-top: 0.35rem;
+    text-align: center;
+  }
+</style>

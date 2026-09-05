@@ -1,51 +1,132 @@
 ---
 title: The F-1 engine
-description: Week 5 discussion slides, reverse-engineered from the object.
+description: Week 5's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import SeminarAgenda from "../components/SeminarAgenda.astro";
 
 # The F-1 engine
 
-## reverse-engineering from the object, not the paperwork
+## drawings that survived, an engine that still had to be reverse-engineered
 
 {/* _class: impact */}
 
 ---
 
-## the claim
+## today's seminar
 
-NASA held the original F-1 drawings decades after production ended and
-still could not straightforwardly rebuild the engine from them. Engineers
-went back to physical hardware — recovered flight-hardware injector plates,
-museum-held engines — and reverse-engineered tolerances, weld sequences, and
-manufacturing judgement calls the drawings alone never settled.
+<SeminarAgenda
+  segments={[
+    { label: "Framing", minutes: 20 },
+    { label: "The pattern", minutes: 10 },
+    { label: "Discussion", minutes: 20 },
+    { label: "Activity: compare F-1 to FOGBANK", minutes: 40 },
+    { label: "Debrief", minutes: 20 },
+    { label: "Wrap-up", minutes: 10 },
+  ]}
+/>
+
+---
+
+## a familiar shape, decades later
+
+The Rocketdyne F-1 powered the Saturn V's first stage. Decades after
+production ended, NASA held the original drawings and still could not
+straightforwardly rebuild the engine from them.
 
 ```notes
-Read this against week 4 before the diagram: two institutions, two
-different missing pieces, the same shape of gap.
+Ask, before revealing anything else: given what week 4 argued, what would
+the room predict was missing from the drawings? Let a few guesses land
+before the next slide.
 ```
+
+---
+
+## going back to the object itself
+
+Engineers went back to physical hardware — including flight-hardware
+injector plates recovered from the ocean floor and museum-held engines
+such as the one now in the Smithsonian's collection — and reverse-engineered
+details the drawings alone didn't settle: tolerances, weld sequences, and
+manufacturing judgement calls that were never the kind of thing a drawing
+records.
+
+---
+
+## two institutions, two missing pieces
+
+Read this against week 4. FOGBANK's records survived and the material
+still couldn't be remade from them; the F-1's records survived and the
+engine still had to be partly reconstructed from the object itself, not
+the paperwork about the object. Same shape of gap, different missing
+piece.
 
 ---
 
 <WeekDiagram
   title="A capability that stops, then resumes from an artefact, at cost"
   recordTrack="full"
-  segments={[
-    { from: 0, to: 0.3 },
-    { from: 0.75, to: 1, costly: true },
-  ]}
-  ruptures={[
-    { at: 0.3, kind: "stop" },
-    { at: 0.75, kind: "resume" },
-  ]}
+  segments={[{ from: 0, to: 0.3 }, { from: 0.75, to: 1, costly: true }]}
+  ruptures={[{ at: 0.3, kind: "stop" }, { at: 0.75, kind: "resume" }]}
 />
+
+```notes
+Point out the gap between the two marked ruptures — that's the years
+where the capability was simply gone, before reconstruction from the
+artefact began.
+```
 
 ---
 
-## the question this week leaves for the seminar
+## discussion
 
-Is reverse-engineering from an artefact recovering the same capability that
-was lost, or a different one that produces the same output?
+- What kind of thing was missing here — a material property, a
+  manufacturing judgement, a person — compared to what was missing in
+  FOGBANK's case?
+- What artefact ended up substituting for the missing record — an
+  oversight report, a museum object? Is "the record" always a document?
+- Reinstatement here meant reverse-engineering from an artefact rather
+  than rebuilding a process from people. Is that the same capability
+  recovered, or a different one that happens to produce the same output?
+  {/* facilitate: this is the question left open — don't settle it, carry it into the wrap-up */}
+
+---
+
+## activity: compare F-1 to FOGBANK
+
+**Setup (5 min).** Pull up both this week's diagram and week 4's,
+side by side.
+
+**Groups (20 min).** Build a two-column comparison: for each case, what
+kind of thing was missing, and what artefact or report ended up
+substituting for it.
+
+**Share-back (15 min).** Each group presents one row of the comparison;
+compile a shared table on the board.
+
+```notes
+Push groups past "both had a gap" toward naming the specific *kind* of
+missing thing in each — that specificity is what the debrief needs.
+```
+
+---
+
+## debrief
+
+Look at the compiled table. Does "the record" always end up being a
+document in the end, or did one or both cases resolve through something
+that wasn't a document at all?
+
+---
+
+## wrap-up
+
+Two institutions, two different missing pieces, the same shape of gap —
+and in neither case did having the paperwork turn out to be enough. Week
+6 changes the pattern entirely: a capability given away on purpose,
+rather than lost by accident.
+
+[Back to this week's session page](/sessions/week-05/)
 
 {/* _class: centered */}

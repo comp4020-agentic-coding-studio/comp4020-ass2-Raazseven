@@ -1,53 +1,131 @@
 ---
 title: Buying it back
-description: Week 8 discussion slides, the invoice for reinstatement.
+description: Week 8's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import SeminarAgenda from "../components/SeminarAgenda.astro";
 
 # Buying it back
 
-## the invoice for reinstatement
+## an itemised invoice for reinstatement, in public
 
 {/* _class: impact */}
 
 ---
 
-## the claim
+## today's seminar
 
-In 2015 the US Naval Academy reinstated instruction in celestial
-navigation, dropped decades earlier once satellite positioning made it seem
-unnecessary. Public reporting is unusually explicit about both why it came
-back and what it cost — new instruction hours, a specific class year, and
-instructors who had to relearn a skill the institution had spent decades
-treating as obsolete.
+<SeminarAgenda
+  segments={[
+    { label: "Framing", minutes: 20 },
+    { label: "The pattern", minutes: 10 },
+    { label: "Discussion", minutes: 20 },
+    { label: "Activity: write the reinstatement proposal", minutes: 40 },
+    { label: "Debrief", minutes: 20 },
+    { label: "Wrap-up", minutes: 10 },
+  ]}
+/>
+
+---
+
+## the decision
+
+In 2015, the United States Naval Academy reinstated instruction in
+celestial navigation, having dropped it from the core curriculum decades
+earlier on the reasoning that satellite positioning had made it
+unnecessary. The public reporting is unusually explicit about why: concern
+that satellite navigation could be degraded or denied, and a judgement
+that the backup skill needed to exist in people, not only in policy.
+
+---
+
+## the itemised cost
+
+The reporting is also unusually explicit about the cost of getting the
+capability back — new instruction hours, a specific class year to start
+with, instructors who had to relearn or newly learn a skill the
+institution had spent decades treating as obsolete.
 
 ```notes
-Most of this course documents a loss. This is the one case with numbers
-attached to buying the capability back — worth pausing on before the
-diagram.
+This is the one week in the course with a number attached to reinstatement
+in public — worth pointing out explicitly, since most of the syllabus only
+documents the loss side of this pattern.
 ```
+
+---
+
+## why this case matters here
+
+Most of this syllabus documents a loss. This one documents what buying it
+back actually required, with numbers attached — the closest thing the
+course has to reading an invoice for
+[reinstatement](/glossary/#reinstatement) rather than just an announcement
+of intent.
 
 ---
 
 <WeekDiagram
   title="A capability that stops, then resumes at a visible cost"
   recordTrack="full"
-  segments={[
-    { from: 0, to: 0.4 },
-    { from: 0.75, to: 1, costly: true },
-  ]}
-  ruptures={[
-    { at: 0.4, kind: "stop" },
-    { at: 0.75, kind: "resume" },
-  ]}
+  segments={[{ from: 0, to: 0.4 }, { from: 0.75, to: 1, costly: true }]}
+  ruptures={[{ at: 0.4, kind: "stop" }, { at: 0.75, kind: "resume" }]}
 />
 
 ---
 
-## the question this week leaves for the seminar
+## discussion
 
-Is the Naval Academy case rare because hedging is hard, or because most
-institutions never notice the gap while there's still time?
+- Read the case as a proposal document: what would you have had to argue,
+  and to whom, to get this funded *before* satellite denial was a live
+  concern?
+- Compare that argument to the one FOGBANK's reinstatement effort had to
+  make after the fact.
+- FOGBANK and the F-1 were both reinstated only once urgently needed. The
+  Naval Academy reinstated as a hedge, before the loss was forced. What
+  would it take for institutions to reinstate on that basis more often —
+  and is this case rare because it's hard, or because most institutions
+  never notice the gap while there's still time?
+  {/* facilitate: this is the question left open — hold it for the wrap-up */}
+
+---
+
+## activity: write the reinstatement proposal
+
+**Setup (5 min).** Recap the case as if it were a funding proposal, not a
+finished decision.
+
+**Groups (20 min).** Draft the pitch you'd have had to make, years
+before any denial event, to a budget committee: who's the audience, what's
+the ask, what's the resistance you'd expect.
+
+**Share-back (15 min).** Compare your pre-emptive pitch to what FOGBANK's
+after-the-fact reinstatement ask must have looked like.
+
+```notes
+Push groups to name the *resistance* specifically — "why spend money on a
+backup for something that's never failed" is the actual objection a
+pre-emptive pitch has to answer, and it's a harder one than a reactive
+pitch faces.
+```
+
+---
+
+## debrief
+
+What's structurally harder about the pre-emptive pitch than the reactive
+one? Does the Naval Academy's itemised cost make a future pre-emptive ask
+easier to argue elsewhere, or is each institution starting from zero?
+
+---
+
+## wrap-up
+
+Reinstatement has a price, and this is the rare case where the invoice is
+public before the crisis, not after it. Week 9 asks a question this whole
+syllabus has been quietly skipping: how would you know a loss claim is
+even true?
+
+[Back to this week's session page](/sessions/week-08/)
 
 {/* _class: centered */}

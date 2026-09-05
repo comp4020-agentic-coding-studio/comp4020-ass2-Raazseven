@@ -1,30 +1,69 @@
 ---
 title: The knowledge that isn't written
-description: Week 2 discussion slides, tacit knowledge and the TEA laser.
+description: Week 2's full seminar runsheet, from framing to wrap-up.
 ---
 
 import WeekDiagram from "../components/WeekDiagram.astro";
+import SeminarAgenda from "../components/SeminarAgenda.astro";
 
 # The knowledge that isn't written
 
-## tacit knowledge, the TEA laser
+## the TEA laser, and the papers that didn't transfer it
 
 {/* _class: impact */}
 
 ---
 
-## the claim
+## today's seminar
 
-In the early 1960s, several physics labs tried to build a TEA laser from the
-published literature alone. The papers were not wrong or withheld. Harry
-Collins found that success tracked one thing: contact with a lab that
-already had one working. The papers travelled freely. The ability to build
-the thing they described did not.
+<SeminarAgenda
+  segments={[
+    { label: "Framing", minutes: 20 },
+    { label: "The pattern", minutes: 10 },
+    { label: "Discussion", minutes: 20 },
+    { label: "Activity: write the unwritable instructions", minutes: 40 },
+    { label: "Debrief", minutes: 20 },
+    { label: "Wrap-up", minutes: 10 },
+  ]}
+/>
+
+---
+
+## several labs, one set of papers
+
+In the early 1960s, several physics labs tried to build a TEA laser from
+the published literature alone. The papers were not wrong, not incomplete
+in any way a referee would have flagged, and not withheld.
 
 ```notes
-There's no rupture point in this week's diagram, because nothing here ever
-broke — the record track and the capability track were never the same
-track to begin with.
+Sit with "not wrong, not incomplete, not withheld" for a second — the
+room's first instinct will be to assume the papers were somehow at fault.
+That instinct is exactly what this week is against.
+```
+
+---
+
+## what actually predicted success
+
+Harry Collins, studying the attempts, found success correlated with one
+thing: contact, direct or one step removed, with a lab that already had a
+working laser. Papers travelled freely. The ability to build the thing
+they described did not.
+
+---
+
+## never on the record to begin with
+
+This is the sharpest version of [tacit
+knowledge](/glossary/#tacit-knowledge) the course will use: not a
+capability that was lost, but one that was never on the record to begin
+with. There is no rupture point in this week's diagram, because nothing
+here ever broke.
+
+```notes
+Point back at week 1's legend slide: the record track and the capability
+track were simply never the same track. Week 1's distinction is the
+reason that sentence is coherent instead of confusing.
 ```
 
 ---
@@ -35,17 +74,61 @@ track to begin with.
   segments={[{ from: 0, to: 1 }]}
 />
 
+---
+
+## discussion
+
+- If the papers weren't wrong, incomplete, or withheld, what exactly did
+  they lack?
+- What did "contact with a working lab" supply that the paper itself
+  couldn't?
+  {/* facilitate: push past "more detail" as an answer — that's week 3's failure, not this one */}
+- Is there a skill you have that you could not fully hand to a stranger
+  in writing?
+- If some knowledge is tacit by its nature — never fully write-downable —
+  is "we should have documented it better" ever a complete answer to a
+  lost capability?
+  {/* facilitate: this is the question left open — hold it for the wrap-up */}
+
+---
+
+## activity: write the unwritable instructions
+
+**Setup (5 min).** Pick a skill you have that you could not fully hand to
+a stranger in writing — tying a specific knot, a debugging habit, a way
+of reading a room.
+
+**Pairs (20 min).** Write instructions for it in five minutes. Trade with
+a partner and try to follow each other's instructions literally. Note the
+exact line where it breaks down.
+
+**Share-back (15 min).** One breakdown per pair, read aloud.
+
 ```notes
-Ask the room what "no record track" looks like for a skill they hold
-themselves, before moving to the question slide.
+The breakdown line is the point of the exercise, not the instructions
+themselves — steer pairs toward naming it precisely rather than polishing
+the instructions to avoid it.
 ```
 
 ---
 
-## the question this week leaves for the seminar
+## debrief
 
-If some knowledge is tacit by its nature — never fully write-downable — is
-"we should have documented it better" ever a complete answer to a lost
-capability?
+Compare what went missing across the room's instructions against what
+Collins found missing from the laser papers. Group the misses into kinds:
+a physical calibration nobody thinks to state, a judgement call, a
+corrective for when it goes slightly wrong.
+
+---
+
+## wrap-up
+
+Some knowledge was never on the record to begin with — the gap here isn't
+a documentation failure, it's a different kind of thing than a document
+can hold. Week 3 flips this failure around: a record that is complete and
+still doesn't transfer. Week 4 gives you a case built to test today's open
+question directly.
+
+[Back to this week's session page](/sessions/week-02/)
 
 {/* _class: centered */}
