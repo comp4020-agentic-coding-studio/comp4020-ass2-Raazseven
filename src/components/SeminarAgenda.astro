@@ -19,10 +19,11 @@ const summary = segments.map((s) => `${s.label}, ${s.minutes} minutes`).join("; 
 ---
 
 <figure class="seminar-agenda">
-  <div class="sa-bar" role="img" aria-label={`Seminar runsheet: ${summary}`}>
+  <div class="sa-rows" role="img" aria-label={`Seminar runsheet: ${summary}`}>
     {
       segments.map((seg) => (
-        <div class="sa-segment" style={`flex-grow: ${seg.minutes};`}>
+        <div class="sa-row">
+          <div class="sa-fill" style={`width: ${(seg.minutes / total) * 100}%;`} />
           <span class="sa-label">{seg.label}</span>
           <span class="sa-minutes">{seg.minutes} min</span>
         </div>
@@ -34,55 +35,59 @@ const summary = segments.map((s) => `${s.label}, ${s.minutes} minutes`).join("; 
 
 <style>
   .seminar-agenda {
-    margin: 1.5rem 0;
-  }
-
-  .sa-bar {
-    display: flex;
-    width: 100%;
-    border-radius: 0.4rem;
-    overflow: hidden;
-    border: 1px solid var(--at-text-secondary, #555);
-  }
-
-  .sa-segment {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 0.15rem;
-    padding: 0.6rem 0.35rem;
-    text-align: center;
-    border-right: 1px solid var(--at-text-secondary, #555);
+    gap: 1.25rem;
+    width: 100%;
+    height: 100%;
+    margin: 0;
   }
 
-  .sa-segment:last-child {
-    border-right: none;
+  .sa-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
   }
 
-  .sa-segment:nth-child(odd) {
-    background: color-mix(in srgb, var(--at-accent, #a6321f) 32%, transparent);
+  .sa-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--at-text-secondary, #555);
+    overflow: hidden;
   }
 
-  .sa-segment:nth-child(even) {
-    background: color-mix(in srgb, var(--at-accent, #a6321f) 18%, transparent);
+  .sa-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: color-mix(in srgb, var(--at-accent, #a6321f) 38%, transparent);
+    z-index: 0;
   }
 
   .sa-label {
-    font-size: 0.78rem;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    font-size: 1.3rem;
     font-weight: 600;
-    line-height: 1.15;
+    line-height: 1.25;
   }
 
   .sa-minutes {
-    font-size: 0.68rem;
-    opacity: 0.75;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    opacity: 0.8;
   }
 
   figcaption {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     color: var(--at-text-secondary, #555);
-    margin-top: 0.35rem;
     text-align: center;
   }
 </style>
