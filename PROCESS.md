@@ -71,6 +71,17 @@ session and that at least one lecture's `slides` field points at a deck that
 actually built, so the vertical slice claim is enforced, not just asserted in
 this file.
 
+Once all twelve seminars existed, I went back and gave each one a short
+discussion-support deck of its own
+[`818ee02`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/818ee02) —
+a `slides` field on the sessions schema, mirroring the one `lectures`
+already had, so week 4's vertical-slice deck stayed the one exception rather
+than the template for a duplicate schema field. Each deck reuses that
+week's own `WeekDiagram` props rather than restating them, so the deck and
+the session page can't quietly drift apart; `spec/session-slides.test.ts`
+checks that every session's `slides` link resolves to a deck that actually
+built, the same discipline the lecture/deck check already used.
+
 The policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
 and the home page and hero/card art
