@@ -1,0 +1,64 @@
+---
+// Used once per deck, anywhere in the slide content. Renders no markup of
+// its own — the script it emits builds a persistent back-to-session button
+// and an Esc-key shortcut directly against `document.body`, so both survive
+// Reveal navigating between slides regardless of which slide this component
+// happened to be declared on.
+---
+
+<script>
+  if (!document.documentElement.dataset.astromotionExport) {
+    // "/decks/week-04/" -> "/sessions/week-04/", under any base path --- the
+    // deck route and the session route share the same last segment, so no
+    // per-deck slug needs to be passed in.
+    const target = location.pathname.replace("/decks/", "/sessions/");
+
+    const style = document.createElement("style");
+    style.textContent = `
+      .deck-back-nav {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--at-text-secondary, #555);
+        background: color-mix(in srgb, var(--at-accent, #a6321f) 28%, transparent);
+        color: var(--r-main-color, #f5f5f5);
+        font-size: 0.8rem;
+        font-family: inherit;
+        text-decoration: none;
+        opacity: 0.82;
+        transition: opacity 0.15s ease;
+      }
+      .deck-back-nav:hover,
+      .deck-back-nav:focus-visible {
+        opacity: 1;
+      }
+    `;
+    document.head.appendChild(style);
+
+    const link = document.createElement("a");
+    link.href = target;
+    link.className = "deck-back-nav";
+    link.textContent = "← Session page";
+    document.body.appendChild(link);
+
+    // Capture phase, same technique astromotion's own whiteboard module uses
+    // to claim a key before Reveal's (bubble-phase) handler sees it --- Esc
+    // would otherwise open Reveal's built-in slide overview.
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.key !== "Escape") return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        location.href = target;
+      },
+      true,
+    );
+  }
+</script>
