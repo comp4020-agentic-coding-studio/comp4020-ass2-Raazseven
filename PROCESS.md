@@ -2,15 +2,14 @@
 
 ## Where this came from
 
-I started by gathering real material rather than inventing a theme first, and
-came across a paper on the F-1 rocket engine: decades after Saturn V ended,
-NASA needed one again, and the drawings weren't enough — a museum engine had
-to be studied as hardware, because the manufacturing judgement behind it
-never made it onto the page. That's a different kind of loss than a record
-going missing, and a seminar course built around cases like it felt like a
-real course rather than a demo. I wrote a first plan and specification
-myself, revised it in a separate Claude conversation, and brought that plan
-in here as the first prompt.
+I gathered real material rather than inventing a theme first, and came
+across a paper on the F-1 rocket engine: decades after Saturn V ended, NASA
+needed one again, and the drawings weren't enough — a museum engine had to
+be studied as hardware, because the manufacturing judgement behind it never
+reached the page. That's a different kind of loss than a record going
+missing, and a seminar course built around cases like it felt real rather
+than a demo. I wrote a first plan and specification myself, revised it in a
+separate Claude conversation, and brought that plan in as the first prompt.
 
 ## What I built
 
@@ -18,12 +17,11 @@ A 23-page Astro course site for "Lost Capability: Studies in Institutional
 Forgetting" (SLOP6119) — twelve seminars, a readings list, a glossary, three
 assessments, and a policies page. The seminar content stays sincere (tacit
 knowledge, deskilling, contested reconstructions, one live unresolved case);
-the institutional furniture around it — nav labels, policies, the "Slop
-University" framing — is played straight as satire. One shared diagram
-component (time axis, record track, capability track, rupture point) gives
-every claim the same visual grammar, so FOGBANK's "record survives,
-capability stops" (week 4) reads differently from "stops, then resumes at
-cost" (week 5, the F-1 week itself).
+the institutional furniture — nav labels, policies, "Slop University" itself
+— plays straight as satire. One shared diagram component (time axis, record
+track, capability track, rupture point) gives every claim the same grammar,
+so week 4's "record survives, capability stops" reads differently from week
+5's "stops, then resumes at cost" (the F-1 week itself).
 
 ## How I got here
 
@@ -39,7 +37,9 @@ I then had the rest written against that fixed shape
 [`6bbac85`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/6bbac85) —
 catching two build-only errors, a YAML colon misread as a nested mapping and
 MDX reading a `<style>` block's braces as JavaScript
-[`cd8ac7b`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/cd8ac7b) —
+[`cd8ac7b`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/cd8ac7b),
+and had both written into `CLAUDE.md` as stack gotchas
+[`5627250`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/5627250) —
 and directed week 11's live case as case and counter-case with no verdict,
 checked myself against the brief rather than trusted to a test.
 
@@ -52,7 +52,9 @@ twelve weeks existed, each got its own deck
 [`818ee02`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/818ee02):
 the first pass — one claim slide and a prompt — read too thin to run a
 seminar from, so I had it rebuilt into a full runsheet with a shared
-`SeminarAgenda` visual, later adding a `WeekStats` panel for scale.
+`SeminarAgenda` visual, later adding a `WeekStats` panel for scale, and had
+the rebuild's own MDX comment gotcha recorded in `CLAUDE.md` too
+[`4b60607`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/4b60607).
 
 The five people started as flat illustrations; once the rest of the site had
 real texture I had them swapped for AI-generated photos
@@ -70,9 +72,9 @@ browser instead
 and had that measure-don't-guess lesson written into `CLAUDE.md` itself
 [`15b75da`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/15b75da).
 
-Search looked unimplemented in review, but I checked rather than assumed:
-the theme already wires it end to end, and only reports the index missing
-under `pnpm dev`, since it indexes `dist/`, built only at build time. The
+Search looked unimplemented, but I checked rather than assumed: the theme
+already wires it end to end, and only reports the index missing under
+`pnpm dev`, since it indexes `dist/`, built only at build time. The
 policies page
 [`37b83fc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Raazseven/commit/37b83fc)
 and the home page and hero art
